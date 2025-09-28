@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyg3e15vf7ajh"]
+
+[ext_resource type="Texture2D" uid="uid://crtv3anxytx1" path="res://assets/black.jpg" id="1_egc6y"]
+[ext_resource type="Script" uid="uid://csucu7n5iia1b" path="res://texture_rect.gd" id="2_lt2ag"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_75yvt"]
+font_size = 120
+
+[node name="End" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -19.0
+offset_top = -15.0
+offset_right = 1150.0
+offset_bottom = 659.0
+texture = ExtResource("1_egc6y")
+expand_mode = 1
+script = ExtResource("2_lt2ag")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 330.0
+offset_top = 233.0
+offset_right = 837.0
+offset_bottom = 398.0
+text = "You Win!"
+label_settings = SubResource("LabelSettings_75yvt")

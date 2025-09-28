@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://s31so70x8y0v"]
+
+[ext_resource type="Script" uid="uid://shck77or0hsi" path="res://scripts/trap.gd" id="1_w2pp3"]
+[ext_resource type="Texture2D" uid="uid://d3w5gmh1xko26" path="res://assets/pixilart-drawing.png" id="2_gix62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmoth"]
+size = Vector2(64.5, 13)
+
+[node name="trap" type="Area2D"]
+script = ExtResource("1_w2pp3")
+
+[node name="spike" type="Sprite2D" parent="."]
+position = Vector2(68.5, 62)
+scale = Vector2(1.21, 1)
+texture = ExtResource("2_gix62")
+
+[node name="spike 2" type="Sprite2D" parent="."]
+position = Vector2(84, 62)
+scale = Vector2(1.21, 1)
+texture = ExtResource("2_gix62")
+
+[node name="spike 3" type="Sprite2D" parent="."]
+position = Vector2(100, 62)
+scale = Vector2(1.21, 1)
+texture = ExtResource("2_gix62")
+
+[node name="spike 4" type="Sprite2D" parent="."]
+position = Vector2(116, 62)
+scale = Vector2(1.21, 1)
+texture = ExtResource("2_gix62")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(82.75, 64)
+shape = SubResource("RectangleShape2D_bmoth")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

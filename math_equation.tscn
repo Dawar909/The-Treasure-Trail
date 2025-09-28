@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfxwqnvnvd5xo"]
+
+[sub_resource type="GDScript" id="GDScript_bi60f"]
+script/source = "extends LineEdit
+
+
+func _on_text_submitted(new_text: String) -> void:
+	if new_text == \"476\":
+		get_tree().change_scene_to_file(\"res://2_nd_scene.tscn\")
+	else:
+		$Label.text = \"Wrong\"
+		
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 92.0
+offset_right = 599.0
+offset_bottom = 123.0
+placeholder_text = "Enter Answer"
+clear_button_enabled = true
+script = SubResource("GDScript_bi60f")
+
+[node name="Label" type="Label" parent="LineEdit"]
+layout_mode = 0
+offset_left = -43.0
+offset_top = 46.0
+offset_right = 149.0
+offset_bottom = 69.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 491.0
+offset_top = 39.0
+offset_right = 545.0
+offset_bottom = 62.0
+text = "28 x 17"
+
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]

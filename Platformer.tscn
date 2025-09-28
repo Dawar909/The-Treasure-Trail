@@ -1,0 +1,239 @@
+[gd_scene load_steps=28 format=3 uid="uid://cepu1s10wdked"]
+
+[ext_resource type="Texture2D" uid="uid://bx1j8tlislhmr" path="res://assets/download.png" id="1_de3hm"]
+[ext_resource type="Script" uid="uid://c3wh8sirh4nty" path="res://scripts/progress_bar.gd" id="2_jxnjx"]
+[ext_resource type="Script" uid="uid://l05fayl2cjb" path="res://scripts/goal.gd" id="2_vq5mh"]
+[ext_resource type="Script" uid="uid://dcbh14gdxgf7n" path="res://message.gd" id="4_hcj40"]
+[ext_resource type="Texture2D" uid="uid://pual035sjvje" path="res://assets/istockphoto-1179000400-1024x1024-removebg-preview.png" id="4_jxnjx"]
+[ext_resource type="PackedScene" uid="uid://bgr6u1shyg7dr" path="res://player.tscn" id="5_i8po2"]
+[ext_resource type="PackedScene" uid="uid://blvtx7rgjgpag" path="res://enemy.tscn" id="5_jxnjx"]
+[ext_resource type="Script" uid="uid://d1bcocfwt6cdu" path="res://goal_2.gd" id="7_de3hm"]
+[ext_resource type="Script" uid="uid://ccsw65o5t5phf" path="res://static_body_2d.gd" id="9_lll3v"]
+[ext_resource type="Texture2D" uid="uid://vwqk8sf7hmke" path="res://assets/WhatsApp_Image_2025-09-28_at_10.19.55_23f28734-removebg-preview.png" id="10_aruna"]
+[ext_resource type="Script" uid="uid://c3q4ed63h3f1p" path="res://teleporter.gd" id="11_aruna"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8po2"]
+size = Vector2(1152, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxnjx"]
+size = Vector2(3, 635.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8i6o"]
+size = Vector2(297.5, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lll3v"]
+size = Vector2(166.194, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aruna"]
+size = Vector2(211.375, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8akri"]
+size = Vector2(225.5, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uehge"]
+size = Vector2(146.5, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de3hm"]
+size = Vector2(1148, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcj40"]
+size = Vector2(1, 473)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbmht"]
+size = Vector2(165, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i8po2"]
+font_size = 40
+outline_size = 2
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 0.00392157)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hcj40"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hcj40"]
+radius = 22.8036
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1740"]
+size = Vector2(163.668, 40.1077)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o5mk"]
+size = Vector2(65, 141.728)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vkg3"]
+size = Vector2(52.5, 55)
+
+[node name="Platformer" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_de3hm")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Background"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 9.0
+offset_right = 81.0
+offset_bottom = 36.0
+max_value = 3.0
+value = 3.0
+script = ExtResource("2_jxnjx")
+
+[node name="Solid" type="StaticBody2D" parent="."]
+position = Vector2(311, 707)
+
+[node name="Ground" type="CollisionShape2D" parent="Solid"]
+position = Vector2(-120, -98)
+shape = SubResource("RectangleShape2D_i8po2")
+
+[node name="Edge" type="CollisionShape2D" parent="Solid"]
+position = Vector2(-318.5, -423.25)
+shape = SubResource("RectangleShape2D_jxnjx")
+
+[node name="platform" type="CollisionShape2D" parent="Solid"]
+position = Vector2(-161.75, -472)
+shape = SubResource("RectangleShape2D_p8i6o")
+
+[node name="platform 2" type="CollisionShape2D" parent="Solid"]
+position = Vector2(-240.25, -260)
+shape = SubResource("RectangleShape2D_lll3v")
+
+[node name="platform 6" type="CollisionShape2D" parent="Solid"]
+position = Vector2(-101, -219)
+rotation = 0.430858
+shape = SubResource("RectangleShape2D_lll3v")
+
+[node name="platform 7" type="CollisionShape2D" parent="Solid"]
+position = Vector2(67.1536, -185.081)
+rotation = 0.0103184
+shape = SubResource("RectangleShape2D_lll3v")
+
+[node name="platform 3" type="CollisionShape2D" parent="Solid"]
+position = Vector2(729.313, -97)
+shape = SubResource("RectangleShape2D_aruna")
+
+[node name="platform 4" type="CollisionShape2D" parent="Solid"]
+position = Vector2(421, -403)
+shape = SubResource("RectangleShape2D_8akri")
+
+[node name="platform 8" type="CollisionShape2D" parent="Solid"]
+position = Vector2(615, -440)
+rotation = -0.514977
+shape = SubResource("RectangleShape2D_8akri")
+
+[node name="platform 5" type="CollisionShape2D" parent="Solid"]
+position = Vector2(766.25, -475)
+shape = SubResource("RectangleShape2D_uehge")
+
+[node name="roof" type="CollisionShape2D" parent="Solid"]
+position = Vector2(262, -744.5)
+shape = SubResource("RectangleShape2D_de3hm")
+
+[node name="edge 2" type="CollisionShape2D" parent="Solid"]
+position = Vector2(842.5, -266.5)
+shape = SubResource("RectangleShape2D_hcj40")
+
+[node name="water ground" type="CollisionShape2D" parent="Solid"]
+position = Vector2(539.5, -61)
+shape = SubResource("RectangleShape2D_fbmht")
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2(12, -28)
+script = ExtResource("2_vq5mh")
+
+[node name="Message" type="Label" parent="Goal"]
+self_modulate = Color(0.932782, 0.829941, 0.686246, 1)
+top_level = true
+offset_left = 14.0
+offset_top = 303.0
+offset_right = 652.0
+offset_bottom = 358.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+label_settings = SubResource("LabelSettings_i8po2")
+script = ExtResource("4_hcj40")
+
+[node name="Sprite2D" type="Sprite2D" parent="Goal"]
+material = SubResource("CanvasItemMaterial_hcj40")
+position = Vector2(62, 595)
+texture = ExtResource("4_jxnjx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+position = Vector2(30, 425)
+rotation = 3.15617
+shape = SubResource("CircleShape2D_hcj40")
+
+[node name="Button" type="Button" parent="Goal"]
+visible = false
+offset_left = 485.0
+offset_top = 35.0
+offset_right = 686.0
+offset_bottom = 146.0
+text = "Maths Equation"
+
+[node name="Player" parent="." instance=ExtResource("5_i8po2")]
+position = Vector2(-1, -66)
+
+[node name="Enemy" parent="." instance=ExtResource("5_jxnjx")]
+position = Vector2(364, 239)
+
+[node name="Goal2" type="Area2D" parent="."]
+position = Vector2(760, 191)
+script = ExtResource("7_de3hm")
+
+[node name="Message" type="Label" parent="Goal2"]
+offset_left = 463.0
+offset_top = 11.0
+offset_right = 837.0
+offset_bottom = 66.0
+label_settings = SubResource("LabelSettings_i8po2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal2"]
+position = Vector2(88.8316, 435.752)
+rotation = -3.12702
+shape = SubResource("RectangleShape2D_m1740")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(2, -134)
+rotation = -0.0138929
+scale = Vector2(0.996301, 1.73393)
+script = ExtResource("9_lll3v")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1079, 155)
+rotation = 0.37666
+scale = Vector2(3.51899, 3.10052)
+texture = ExtResource("10_aruna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1089.24, 137.378)
+rotation = 0.284224
+shape = SubResource("RectangleShape2D_2o5mk")
+
+[node name="teleporter" type="Area2D" parent="."]
+script = ExtResource("11_aruna")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleporter"]
+position = Vector2(1147, 175)
+shape = SubResource("RectangleShape2D_7vkg3")
+
+[connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]
+[connection signal="pressed" from="Goal/Button" to="Goal" method="_on_button_pressed"]
+[connection signal="died" from="Player" to="Background/ProgressBar" method="_on_player_died"]
+[connection signal="died" from="Player" to="Enemy" method="_on_player_died"]
+[connection signal="drown_disabled" from="Player" to="Goal2" method="_on_player_drown_disabled"]
+[connection signal="health_changed" from="Player" to="Background/ProgressBar" method="_on_player_health_changed"]
+[connection signal="open_door" from="Player" to="StaticBody2D" method="_on_player_open_door"]
+[connection signal="vanish_label" from="Player" to="Goal" method="_on_player_vanish_label"]
+[connection signal="body_entered" from="Enemy" to="Player" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="Goal2" to="Player" method="_on_goal_2_body_entered"]
+[connection signal="body_exited" from="Goal2" to="Goal" method="_on_goal_2_body_exited"]
+[connection signal="body_entered" from="teleporter" to="teleporter" method="_on_body_entered"]
